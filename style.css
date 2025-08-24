@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans",
+    "Helvetica Neue", Arial;
+  background: radial-gradient(
+    1000px 600px at 10% 10%,
+    #0f172a 0%,
+    #081224 30%,
+    #020617 100%
+  );
+  color: #eef2ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 22px;
+  align-items: start;
+}
+
+.tasbeh-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.02)
+  );
+  border-radius: 20px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.title {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.layout {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bead-ring {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+.ring-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 18px;
+  display: grid;
+  place-items: center;
+}
+
+.center {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.7),
+    inset 0 6px 18px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
+}
+
+.counter {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.zikr {
+  font-size: 2rem;
+  margin-top: -56px;
+  opacity: 0.95;
+  text-align: center;
+}
+
+.progress-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  background: conic-gradient(
+    #8b5cf6 0deg,
+    #8b5cf6 0deg,
+    rgba(255, 255, 255, 0.04) 0deg
+  );
+  transition: background 260ms linear;
+}
+
+.beads {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  z-index: 3;
+  pointer-events: none;
+  display: block;
+}
+.bead {
+  --size: 18px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: linear-gradient(180deg, #fff, #c7b8ff);
+  box-shadow: 0 6px 12px rgba(139, 92, 246, 0.25),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.25);
+  transform-origin: center calc(200px + 9px);
+}
+
+.full-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+}
+
+aside.controls {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 20px;
+  padding: 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.bismillah {
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  margin-bottom: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.big-btn {
+  flex: 1;
+  padding: 14px 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.05rem;
+  background: linear-gradient(180deg, #7c3aed, #5b21b6);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(91, 33, 182, 0.22);
+}
+.reset-btn {
+  flex: 0 0 56px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #334155, #0f172a);
+}
+
+.small-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.95rem;
+}
+
+.meta {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .bead-ring {
+    width: 320px;
+    height: 320px;
+  }
+  .center {
+    width: 190px;
+    height: 190px;
+  }
+}

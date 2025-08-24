@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Tasbeh</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="tasbeh-card" role="region" aria-label="Digital Tasbeh card">
+        <div class="title">
+          🕌 <strong>Digital Tasbeh</strong>
+          <span style="margin-left: auto; font-size: 0.9rem; opacity: 0.8"
+            >100% real feel • Mobile friendly</span
+          >
+        </div>
+
+        <div class="bead-ring" id="beadRing" aria-hidden="false">
+          <div class="progress-ring" id="progressRing" aria-hidden="true"></div>
+          <div class="ring-bg" aria-hidden="true"></div>
+
+          <div class="beads" id="beads" aria-hidden="true"></div>
+
+          <div
+            class="center"
+            id="centerBtn"
+            role="button"
+            tabindex="0"
+            aria-pressed="false"
+            aria-label="Zikr button"
+          >
+            <div id="count" class="counter">0</div>
+            <div id="zikr" class="zikr">سُبْحَانَ ٱللَّٰهِ</div>
+          </div>
+        </div>
+
+        <div class="full-glow" aria-hidden="true"></div>
+      </div>
+
+      <aside class="controls" aria-label="Controls">
+        <div class="bismillah">بِسْمِ ٱللَّٰهِ الرَّحْمَـٰنِ الرَّحِيمِ</div>
+        <audio id="clickSound" src="./assets/tap.wav" preload="auto"></audio>
+        <div class="actions" style="margin-top: 12px">
+          <button id="add" class="big-btn zikr-btn" aria-label="Zikr ME">
+            <span style="font-size: 1.2rem">🤲</span>&nbsp;&nbsp;Zikr Me
+          </button>
+          <button
+            id="restart"
+            class="big-btn reset-btn"
+            title="Reset"
+            aria-label="Reset"
+          >
+            🔄
+          </button>
+        </div>
+
+        <div class="small-actions">
+          <div class="pill" id="autoToggle" role="switch" aria-checked="false">
+            Auto: off
+          </div>
+          <div class="pill" id="soundToggle" role="switch" aria-checked="true">
+            Sound: on
+          </div>
+        </div>
+
+        <div style="margin-top: auto">
+          <div class="meta">
+            Cycle: <strong id="cycleLabel">99</strong> &nbsp;•&nbsp; Step:
+            <strong id="stepLabel">33</strong>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
