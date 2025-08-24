@@ -34,7 +34,6 @@ function updateUI(count) {
   } else if (count <= 99) {
     zikirMe.textContent = "ٱللَّٰهُ أَكْبَرُ";
     if (count === 99) {
-      alert("Zikr tugadi! Qayta boshlang.");
       i = 0;
       localStorage.setItem("zikirCount", i);
     }
