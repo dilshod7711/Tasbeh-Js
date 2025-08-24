@@ -4,7 +4,9 @@ const restartBtn = document.getElementById("restart");
 const zikirMe = document.getElementById("zikr");
 const clickSound = document.getElementById("clickSound");
 
-let i = 0;
+let i = parseInt(localStorage.getItem("zikirCount")) || 0;
+
+updateUI(i);
 
 function playClick() {
   clickSound.currentTime = 0;
@@ -14,25 +16,30 @@ function playClick() {
 function counterInc() {
   i++;
   playClick();
-
-  if (i <= 33) {
-    zikirMe.textContent = "سُبْحَانَ ٱللَّٰهِ";
-  } else if (i <= 66) {
-    zikirMe.textContent = "ٱلْحَمْدُ لِلَّٰهِ";
-  } else if (i <= 99) {
-    zikirMe.textContent = "ٱللَّٰهُ أَكْبَرُ";
-    if (i === 99) {
-      alert("Zikr tugadi! Qayta boshlang.");
-      i = 0;
-    }
-  }
-  countText.textContent = i;
+  updateUI(i);
+  localStorage.setItem("zikirCount", i);
 }
 
 function counterDec() {
   i = 0;
-  zikirMe.textContent = "سُبْحَانَ ٱللَّٰهِ";
-  countText.textContent = i;
+  updateUI(i);
+  localStorage.setItem("zikirCount", i);
+}
+
+function updateUI(count) {
+  if (count <= 33) {
+    zikirMe.textContent = "سُبْحَانَ ٱللَّٰهِ";
+  } else if (count <= 66) {
+    zikirMe.textContent = "ٱلْحَمْدُ لِلَّٰهِ";
+  } else if (count <= 99) {
+    zikirMe.textContent = "ٱللَّٰهُ أَكْبَرُ";
+    if (count === 99) {
+      alert("Zikr tugadi! Qayta boshlang.");
+      i = 0;
+      localStorage.setItem("zikirCount", i);
+    }
+  }
+  countText.textContent = count;
 }
 
 incBtn.addEventListener("click", counterInc);
